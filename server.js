@@ -20,10 +20,10 @@ app.get("/",(req,res)=>{
     res.send("API running");
 })
 console.log("Hi I am creating Ecommerce Application");
-
+const PORT=process.env.PORT || 5000;
 connectDB();
-app.listen(process.env.PORT,()=>{
-    console.log(`server running on port ${process.env.PORT}`);
+app.listen(PORT,()=>{
+    console.log(`server running on port ${PORT}`);
 });
 
 
