@@ -2,6 +2,7 @@ const Product=require("../models/product");
 const {getImageUrl}=require("../utils/imageUrl");
 exports.addProduct= async (req,res)=>{
     try{
+        console.log("FIle",req.file);
         const imageKey=req.file.filename;
         const product=new Product({
             productName:req.body.name,
@@ -36,6 +37,8 @@ exports.getProducts=async (req,res)=>{
         description: p.description,
         imageUrl: getImageUrl(p.imageKey)
     }));
+
+    res.json(formatted);
 
 }
 

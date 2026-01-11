@@ -1,17 +1,19 @@
 const express = require('express');
-const multer=require('multer');
+// const multer=require('multer');
+const upload=require("../middleware/upload");
 const Product = require('../models/product');
 const auth=require("../middleware/auth.middleware");
 const admin=require("../middleware/admin.middleware");
 const productCtrl=require("../controllers/product.controller");
 const router=express.Router();
-const storage= multer.diskStorage({
-    destination:"uploads/",
-    filename:(req,file,cb)=>{
-        cb(null,Date.now()+file.originalname);
-    }
-});
-const upload=multer({storage});
+// const storage= multer.diskStorage({
+//     destination:"uploads/",
+//     filename:(req,file,cb)=>{
+//         cb(null,Date.now()+file.originalname);
+//     }
+// });
+// const upload=multer({storage});
+
 //The logic added in product controller
 
 // router.post('/add',upload.single("image"),async(req,res)=>{
